@@ -1,6 +1,7 @@
 # Buildkite Charts for Helm/Kubernetes
 
-A Buildkite Agent Charts repository for [Helm](https://helm.sh) (the package manager for [Kubernetes](http://kubernetes.io)). 
+The official Buildkite Agent Charts repository for [Helm](https://helm.sh), the package manager for [Kubernetes](http://kubernetes.io). 
+
 ## Available Charts
 
 * [buildkite-agent](buildkite-agent) - a simple replication controller for starting agents
@@ -31,6 +32,10 @@ $ helm install buildkite-agent
 ```
 
 You’ve now got Buildkite Agents running on your Kubernetes cluster! :tada:
+
+## Thanks :heart:
+
+* A massive thanks to [Rimas Mocevicius](https://github.com/rimusz) for authoring these charts
 
 ## Copyright
 
