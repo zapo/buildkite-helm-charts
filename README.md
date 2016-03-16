@@ -1,6 +1,6 @@
 # Buildkite Helm Charts Repository
 
-A Buildkite Agent Charts repository for [Helm](https://helm.sh), providing both a replication controller and secrets support for your agent token and SSH private key files.
+A Buildkite Agent Charts repository for [Helm](https://helm.sh) (the package manager for [Kubernetes](http://kubernetes.io)). In these charts are a replication controller for starting and scaling your build agents, and secrets support for your Buildkite Agent token and SSH private key files.
 
 ## Getting Started
 
