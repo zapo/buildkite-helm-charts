@@ -1,11 +1,10 @@
-# Buildkite Helm Charts Repository
+# Buildkite Charts for Helm/Kubernetes
 
-A Buildkite Agent Charts repository for [Helm](https://helm.sh) (the package manager for [Kubernetes](http://kubernetes.io)). In these charts are a replication controller for starting and scaling your build agents, and secrets support for your Buildkite Agent token and SSH private key files.
-
+A Buildkite Agent Charts repository for [Helm](https://helm.sh) (the package manager for [Kubernetes](http://kubernetes.io)). 
 ## Available Charts
 
-* [buildkite/buildkite-agent](buildkite-agent) - a simple replication controller for starting agents
-* [buildkite/buildkite-agent-private-git](buildkite-agent-private-git) - a replication controller and secrets with a private SSH key, allowing the agent to run builds from private repositories
+* [buildkite-agent](buildkite-agent) - a simple replication controller for starting agents
+* [buildkite-agent-private-git](buildkite-agent-private-git) - a replication controller and secrets with a private SSH key, allowing the agent to run builds from private repositories
 
 ## Getting Started
 
@@ -17,14 +16,14 @@ $ helm repo add buildkite https://github.com/buildkite/helm-charts
 $ helm up
 ```
 
-To use [buildkite/buildkite-agent-private-git](buildkite-agent-private-git):
+To use [buildkite-agent-private-git](buildkite-agent-private-git):
 
 ```
 $ helm fetch buildkite/buildkite-agent-private-git
 $ helm install buildkite-agent-private-git
 ```
 
-To use [buildkite/buildkite-agent](buildkite-agent):
+To use [buildkite-agent](buildkite-agent):
 
 ```
 $ helm fetch buildkite/buildkite-agent
