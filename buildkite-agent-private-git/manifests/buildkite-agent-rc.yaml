@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: buildkite-agent-private-git
+spec:
+  replicas: 1
+  selector:
+    app: buildkite-agent-private-git
+  template:
+    metadata:
+      labels:
+        app: buildkite-agent-private-git
+    spec:
+      containers:
+        - name: buildkite-agent
+          image: buildkite/agent
+          imagePullPolicy: Always
+          securityContext:
+            privileged: true
+          env:
+            - name: BUILDKITE_AGENT_TOKEN
+              value: "{{ .token }}"
+            - name: SSH_PRIVATE_RSA_KEY_PATH
+              value: "/mnt/ssh/id-rsa"
+          volumeMounts:
+            - name: ssh-secret
+              mountPath: /mnt/ssh
+            - name: var-run-docker-sock
+              mountPath: /var/run/docker.sock
+      volumes:
+        - name: ssh-secret
+          secret:
+            secretName: buildkite-agent-ssh-key-secret
+        - name: var-run-docker-sock
+          hostPath:
+            path: /var/run/docker.sock

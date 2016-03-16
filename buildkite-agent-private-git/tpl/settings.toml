@@ -1,0 +1,8 @@
+#
+# This is the configuration file for BuildKite Agent
+
+token = "YOUR BUILDKITE TOKEN"
+
+[ssh]
+id_rsa_pub = "YOUR SSH PUBLIC KEY"
+id_rsa = "YOUR SSH PRIVATE KEY"

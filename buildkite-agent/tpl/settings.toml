@@ -1,0 +1,4 @@
+#
+# This is the configuration file for BuildKite Agent
+
+token = "YOUR BUILDKITE TOKEN"
