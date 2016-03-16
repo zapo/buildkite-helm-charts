@@ -8,7 +8,7 @@ Add this repository to helm with `repo add`:
 
 ```
 $ helm up
-$ helm repo add buildkite https://github.com/buildkite/charts
+$ helm repo add buildkite https://github.com/buildkite/helm-charts
 $ helm up
 ```
 
