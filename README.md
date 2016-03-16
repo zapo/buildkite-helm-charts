@@ -1,6 +1,6 @@
 # Buildkite Charts for Helm/Kubernetes
 
-The official Buildkite Agent Charts repository for [Helm](https://helm.sh), the package manager for [Kubernetes](http://kubernetes.io). 
+The official [Buildkite Agent](https://buildkite.com/docs/agent) Charts repository for [Helm](https://helm.sh), the package manager for [Kubernetes](http://kubernetes.io). 
 
 ## Available Charts
 
