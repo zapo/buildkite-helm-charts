@@ -4,4 +4,4 @@
 token = "YOUR BUILDKITE TOKEN"
 
 [ssh]
-id_rsa = "YOUR_SSH_PRIVATE_KEY encoded with base64"
+id_rsa = "copy YOUR_SSH_PRIVATE_KEY encoded with base64- e.g.: echo -n "$(cat id_rsa)" | base64"
