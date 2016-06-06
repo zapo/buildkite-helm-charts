@@ -4,4 +4,4 @@
 token = "YOUR BUILDKITE TOKEN"
 
 [ssh]
-id_rsa = "YOUR SSH PRIVATE KEY"
+id_rsa = "YOUR_SSH_PRIVATE_KEY encoded with base64"
