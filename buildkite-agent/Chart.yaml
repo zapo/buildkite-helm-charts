@@ -1,6 +1,6 @@
 name: buildkite-agent
 home: https://github.com/buildkite/agent
-version: 1.0.0
+version: 1.0.1
 description: Buildkite Agent
 maintainers:
   - Rimas Mocevicius <rimas@deis.com>
