@@ -6,8 +6,8 @@ The official [Buildkite Agent](https://buildkite.com/docs/agent) Charts reposito
 
 * [buildkite-agent](buildkite-agent) - a simple Deployment and a token secret for starting agents
 * [buildkite-agent-private-git](buildkite-agent-private-git) - a Deployment and secrets with a private SSH key and token , allowing the agent to run builds from private repositories
-* [buildkite-agent](buildkite-agent-builder) - a simple Deployment and a token secret for starting Docker Builder (DIND) agents
-* [buildkite-agent-private-git](buildkite-agent-builder-private-git) - a Deployment and secrets with a private SSH key and token, allowing the Docker Builder (DIND) agent to builds from private repositories
+* [buildkite-agent-builder](buildkite-agent-builder) - a simple Deployment and a token secret for starting Docker Builder (DIND) agents
+* [buildkite-agent-builder-private-git](buildkite-agent-builder-private-git) - a Deployment and secrets with a private SSH key and token, allowing the Docker Builder (DIND) agent to builds from private repositories
 
 ## Getting Started
 
@@ -43,19 +43,19 @@ $ helmc generate buildkite-agent-builder-private-git
 $ helmc install buildkite-agent-builder-private-git
 ```
 
-#### To use [buildkite-agent](buildkite-agent-builder):
+#### To use [buildkite-agent](buildkite-agent):
 
 ```
 $ helmc fetch buildkite/buildkite-agent
 ```
-- Update the `/Users/YOUR_USR_NAME/.helmc/workspace/charts/buildkite-agent-builder/tpl/settings.toml` file with your BuildKite Agent token.
+- Update the `/Users/YOUR_USR_NAME/.helmc/workspace/charts/buildkite-agent/tpl/settings.toml` file with your BuildKite Agent token.
 
 ```
 $ helmc generate buildkite-agent
 $ helmc install buildkite-agent
 ```
 
-#### To use [buildkite-agent-builder](buildkite-agent):
+#### To use [buildkite-agent-builder](buildkite-agent-builder):
 
 ```
 $ helmc fetch buildkite/buildkite-agent-builder
