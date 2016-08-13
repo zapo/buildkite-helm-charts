@@ -42,9 +42,6 @@ spec:
           volumeMounts:
             - name: var-lib-docker
               mountPath: /var/lib/docker
-            - name: service-key
-              mountPath: /etc/service_key
-              readOnly: true
       volumes:
         - name: var-lib-docker
           emptyDir: {}
