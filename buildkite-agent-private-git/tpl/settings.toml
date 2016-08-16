@@ -4,7 +4,4 @@
 token = "YOUR BUILDKITE TOKEN"
 
 [ssh]
-id_rsa = """
-  copy YOUR_SSH_PRIVATE_KEY encoded with base64 e.g.:
-  $ base64 < ~/.ssh/id_rsa | tr --delete '\n'
-"""
+id_rsa = "YOUR SSH PRIVATE KEY"
