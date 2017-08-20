@@ -1,35 +1,35 @@
 ## Buildkite agent image version
 ## ref: https://hub.docker.com/r/buildkite/agent/
 ##
-image: buildkite/agent:alpine-docker
+image:
+  repository: buildkite/agent
+  tag: 3.0
 
 ## Specify a imagePullPolicy
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
 ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
 ##
-imagePullPolicy: Always
-
-## Agent docker image tag
-dockerTag: 1.11.2
+imagePullPolicy: IfNotPresent
 
 ## Replicas Set count
 replicasCount: 1
 
-## Agent release tag, to be used just to trigger a new release of the agent
-## and pull the latest docker image, as buildkite agent has no version tags yet
-agentTag: "2.3.2"
-
 ## Agent meta-data, which can be used to assign jobs
-agentMeta: "role=builder"
+agentMeta: "role=agent"
 
 ## Your Buildkite agent token
 agentToken: ""
 
 ## Your ssh private key
+## if you want to access private git repository
 privateSshKey: ""
 
+## GCP credentials for GCR
 ## base64 encoded GCP Service account json key file
-gcpServiceAccountKey: ""
+gcrCreds: ""
+
+## AWS credentials for ECR
+awsCreds: ""
 
 ## Resource limits
 cpu: 500m

@@ -16,8 +16,8 @@ spec:
     spec:
       serviceAccount: {{ .Release.Name }}
       containers:
-        - name: buildkite-builder
-          image: "{{ .Values.image }}-{{ .Values.dockerTag }}"
+        - name: buildkite
+          image: "{{ .Values.image.repository }}-{{ .Values.image.tag  }}"
           imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
           securityContext:
             privileged: true
@@ -30,8 +30,6 @@ spec:
               memory: 50Mi
           env:
             # BUILDKITE AGENT ENV VARS
-            - name: BUILDKITE_AGENT_VERSION
-              value: "{{ .Values.agentTag }}"
             - name: BUILDKITE_AGENT_TOKEN
               valueFrom:
                 secretKeyRef:
@@ -39,22 +37,36 @@ spec:
                   key: agent-token
             - name: BUILDKITE_AGENT_META_DATA
               value: "{{ .Values.agentMeta }}"
+            {{- if .Values.privateSshKey }}
             - name: SSH_PRIVATE_RSA_KEY
               valueFrom:
                 secretKeyRef:
                   name: {{ .Release.Name }}
                   key: agent-ssh
+            {{- end }}
           volumeMounts:
             - name: var-run-docker-sock
               mountPath: /var/run/docker.sock
+            {{- if .Values.gcrCreds }}
             - name: service-key
               mountPath: /etc/service_key
+            {{- end }}
       volumes:
         - name: var-run-docker-sock
           hostPath:
             path: /var/run/docker.sock
+        {{- if .Values.gcrCreds }}
         - name: service-key
           secret:
-            secretName: {{ .Release.Name }}
+            secretName: {{ .Release.Name }}-gcr
+        {{- end }}
+        {{- if .Values.awsCreds }}
+        - name: docker-config
+          configMap:
+            name: {{ .Release.Name }}-aws
+        - name: aws-creds
+          secret:
+            secretName: {{ .Release.Name }}-aws
+        {{- end }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
