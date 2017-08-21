@@ -1,71 +1,25 @@
-# Buildkite Charts for Helm/Kubernetes
+# Buildkite Agent for Helm
 
-The official [Buildkite Agent](https://buildkite.com/docs/agent) Charts repository for [Helm Classic](https://helm.sh), the package manager for [Kubernetes](http://kubernetes.io).
-
-## Available Charts
-
-* [buildkite-agent](buildkite-agent) - a simple Deployment and a token secret for starting agents
-* [buildkite-agent-private-git](buildkite-agent-private-git) - a Deployment and secrets with a private SSH key and token , allowing the agent to run builds from private repositories
-* [buildkite-agent-builder](buildkite-agent-builder) - a simple Deployment and a token secret for starting Docker Builder (DIND) agents
-* [buildkite-agent-builder-private-git](buildkite-agent-builder-private-git) - a Deployment and secrets with a private SSH key and token, allowing the Docker Builder (DIND) agent to builds from private repositories
+The official [Buildkite Agent](https://buildkite.com/docs/agent) Charts repository for [Helm](https://helm.sh), the package manager for [Kubernetes](http://kubernetes.io).
 
 ## Getting Started
 
-### Add these charts repository using `helmc repo add`:
+### Add Buildkite Helm chart repository:
 
-```
-$ helmc up
-$ helmc repo add buildkite https://github.com/buildkite/helm-charts
-$ helmc up
-```
-
-#### To use [buildkite-agent-private-git](buildkite-agent-private-git):
-
-```
-$ helmc fetch buildkite/buildkite-agent-private-git
-```
-- Update the `/Users/YOUR_USR_NAME/.helmc/workspace/charts/buildkite-agent-private-git/tpl/settings.toml` file with your BuildKite Agent token and the Github SSH key.
-
-```
-$ helmc generate buildkite-agent-private-git
-$ helmc install buildkite-agent-private-git
+```bash
+$ helm repo add buildkite https://github.com/buildkite/helm-charts
+$ helm repo update
 ```
 
-#### To use [buildkite-agent-builder-private-git](buildkite-agent-builder-private-git):
+### Install chart
 
-```
-$ helmc fetch buildkite/buildkite-agent-builder-private-git
-```
-- Update the `/Users/YOUR_USR_NAME/.helmc/workspace/charts/buildkite-agent-builder-private-git/tpl/settings.toml` file with your BuildKite Agent token and the Github SSH key.
+To install the chart with the release name `bk-agent`:
 
-```
-$ helmc generate buildkite-agent-builder-private-git
-$ helmc install buildkite-agent-builder-private-git
+```bash
+$ helm install buildkite/buildkite --name bk-agent --namespace buildkite --set agent.token="BUILDKITE_AGENT_TOKEN"
 ```
 
-#### To use [buildkite-agent](buildkite-agent):
-
-```
-$ helmc fetch buildkite/buildkite-agent
-```
-- Update the `/Users/YOUR_USR_NAME/.helmc/workspace/charts/buildkite-agent/tpl/settings.toml` file with your BuildKite Agent token.
-
-```
-$ helmc generate buildkite-agent
-$ helmc install buildkite-agent
-```
-
-#### To use [buildkite-agent-builder](buildkite-agent-builder):
-
-```
-$ helmc fetch buildkite/buildkite-agent-builder
-```
-- Update the `/Users/YOUR_USR_NAME/.helmc/workspace/charts/buildkite-agent-builder/tpl/settings.toml` file with your BuildKite Agent token.
-
-```
-$ helmc generate buildkite-agent-builder
-$ helmc install buildkite-agent-builder
-```
+Check Agent chart [readme](buildkite/README.md) for more customisation options.
 
 ### You’ve now got Buildkite Agents running on your Kubernetes cluster! :tada:
 
@@ -75,4 +29,4 @@ $ helmc install buildkite-agent-builder
 
 ## Copyright
 
-Copyright (c) 2016 Buildkite Pty Ltd. See [LICENSE](LICENSE) for details.
+Copyright (c) 2017 Buildkite Pty Ltd. See [LICENSE](LICENSE) for details.
