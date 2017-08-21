@@ -79,3 +79,4 @@ fi
 log "Repository cleanup and reset"
 git reset --hard upstream/master
 git clean -df .
+
