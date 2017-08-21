@@ -23,7 +23,7 @@ show_important_vars() {
 COMMIT_CHANGES="${1}"
 : ${COMMIT_CHANGES:=false}
 : ${TRAVIS:=false}
-REPO_URL=https://buildkite.github.io/charts
+REPO_URL=https://buildkite.github.com/charts
 BUILD_DIR=$(mktemp -d)
 # Current directory
 REPO_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -39,14 +39,12 @@ else
 fi
 
 git fetch upstream
-git checkout gh-pages
+git checkout master
 
 log "Initializing build directory with existing charts index"
-if [ -f index.yaml ]; then
-  cp index.yaml $BUILD_DIR
+if [ -f docs/index.yaml ]; then
+  cp docs/index.yaml $BUILD_DIR
 fi
-
-git checkout master
 
 # Package all charts and update index in temporary buildDir
 log "Packaging charts from source code"
@@ -58,24 +56,21 @@ pushd $BUILD_DIR
   done
 
   log "Indexing repository"
-  if [ -f index.yaml ]; then
+  if [ -f docs/index.yaml ]; then
     helm repo index --url ${REPO_URL} --merge index.yaml .
   else
+    mkdir -p $REPO_DIR/docs
     helm repo index --url ${REPO_URL} .
   fi
 popd
 
-git reset upstream/gh-pages
-cp $BUILD_DIR/* $REPO_DIR
+#git reset upstream/gh-pages
+cp -f $BUILD_DIR/* $REPO_DIR/docs
 
 # Commit changes are not enabled during PR
 if [ $COMMIT_CHANGES != "false" ]; then
-  log "Commiting changes to gh-pages branch"
-  git add *.tgz index.yaml
+  log "Commiting changes to master branch"
+  git add docs/*.tgz docs/index.yaml
   git commit --message "$COMMIT_MSG"
-  git push -q upstream HEAD:gh-pages
+  git push -q upstream HEAD:master
 fi
-
-log "Repository cleanup and reset"
-git reset --hard upstream/master
-git clean -df .
