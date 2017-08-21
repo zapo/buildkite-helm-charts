@@ -1,4 +1,4 @@
-# Buildkite Agent Helm Chart
+# Buildkite Helm Charts Repository
 
 The official [Buildkite Agent](https://buildkite.com/docs/agent) Charts repository for [Helm](https://helm.sh), the package manager for [Kubernetes](http://kubernetes.io).
 
@@ -7,7 +7,7 @@ The official [Buildkite Agent](https://buildkite.com/docs/agent) Charts reposito
 ### Add Buildkite Helm chart repository:
 
 ```bash
-$ helm repo add buildkite https://github.com/buildkite/helm-charts
+$ helm repo add buildkite https://buildkite.github.io/charts/
 $ helm repo update
 ```
 
@@ -19,7 +19,7 @@ To install the chart with the release name `bk-agent`:
 $ helm install buildkite/buildkite --name bk-agent --namespace buildkite --set agent.token="BUILDKITE_AGENT_TOKEN"
 ```
 
-Check Agent chart [readme](buildkite/README.md) for more customisation options.
+Check Agent chart [readme](charts/buildkite/README.md) for more customisation options.
 
 ### You’ve now got Buildkite Agents running on your Kubernetes cluster! :tada:
 
