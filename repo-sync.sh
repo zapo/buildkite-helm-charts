@@ -1,5 +1,4 @@
 #!/bin/bash -e
-
 # USAGE: repo-sync.sh <commit-changes?>
 
 log () {
