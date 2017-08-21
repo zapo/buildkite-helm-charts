@@ -27,6 +27,7 @@ Check Agent chart [readme](charts/buildkite/README.md) for more customisation op
 
 * A massive thanks to [Rimas Mocevicius](https://github.com/rimusz) for authoring these charts
 
+
 ## Copyright
 
 Copyright (c) 2017 Buildkite Pty Ltd. See [LICENSE](LICENSE) for details.
