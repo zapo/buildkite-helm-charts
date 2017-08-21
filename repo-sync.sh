@@ -71,6 +71,6 @@ cp -f $BUILD_DIR/* $REPO_DIR/docs
 if [ $COMMIT_CHANGES != "false" ]; then
   log "Commiting changes to master branch"
   git add docs/*.tgz docs/index.yaml
-  git commit --message "$COMMIT_MSG"
+  git commit --message "$COMMIT_MSG [ci skip]"
   git push -q upstream HEAD:master
 fi
