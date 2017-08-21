@@ -7,7 +7,7 @@ The official [Buildkite Agent](https://buildkite.com/docs/agent) Charts reposito
 ### Add Buildkite Helm chart repository:
 
 ```bash
-$ helm repo add buildkite https://buildkite.github.io/charts/
+$ helm repo add bk https://buildkite.github.io/charts/
 $ helm repo update
 ```
 
