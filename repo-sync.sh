@@ -74,3 +74,4 @@ if [ $COMMIT_CHANGES != "false" ]; then
   git commit --message "$COMMIT_MSG [ci skip]"
   git push -q upstream HEAD:master
 fi
+
