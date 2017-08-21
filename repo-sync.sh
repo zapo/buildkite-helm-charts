@@ -23,7 +23,7 @@ show_important_vars() {
 COMMIT_CHANGES="${1}"
 : ${COMMIT_CHANGES:=false}
 : ${TRAVIS:=false}
-REPO_URL=https://buildkite.github.com/charts
+REPO_URL=https://buildkite.github.io/charts
 BUILD_DIR=$(mktemp -d)
 # Current directory
 REPO_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
