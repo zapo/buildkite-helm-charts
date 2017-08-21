@@ -1,15 +1,16 @@
 branches:
-    only:
-      - master
+  only:
+  - master
 install:
-  - export HELM_URL=https://storage.googleapis.com/kubernetes-helm
-  - export HELM_TARBALL=helm-v2.6.0-linux-amd64.tar.gz
-  - wget -q ${HELM_URL}/${HELM_TARBALL}
-  - tar xzfv ${HELM_TARBALL}
-  - PATH=`pwd`/linux-amd64/:$PATH
-  - helm init --client-only
-
+- export HELM_URL=https://storage.googleapis.com/kubernetes-helm
+- export HELM_TARBALL=helm-v2.6.0-linux-amd64.tar.gz
+- wget -q ${HELM_URL}/${HELM_TARBALL}
+- tar xzfv ${HELM_TARBALL}
+- PATH=`pwd`/linux-amd64/:$PATH
+- helm init --client-only
 script:
-  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash ./repo-sync.sh; fi'
-  # Commit changes unless pull request
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./repo-sync.sh true; fi'
+- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash ./repo-sync.sh; fi
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./repo-sync.sh true; fi
+env:
+  global:
+    secure: UsyfqPpQfNzTU9cklWXvNAXI5ZM6kKpGQLrRT3dXB2kvEkQ7M/GRkPbNULSuD2cGxxiHJ70+Jtv+tkapwMdzBVCcrxPI3i9ny8aOaiDte/gNmHXna+tTJw37DPM0PaVzGW7EraHTw5OWnt0CO5XFS3Dlo6ujASYukhNHDFoJiilZntHs6Q9ucBIqLl6t/aUmPtcKurcUdDqF+JkFaVlFmWqpDNzVAKmcKjA3d6RiiSM/cP9IPOVvh3aw/wvuLm4cOdQeP4zU0ziAeIFCzMM1QnP4l7XwhvH7jpjazon+fFazCLNVUGg2YZPlbOjLhZ7LNde/69a7EgkRiE2AzDHPXfcVO4vn14QjRoS0vqpRPy7ZVaQSRCserxQ3PTLWEsJfyEqGV3iKoBhZ9A3et4nf1sDdZl38URIbWtAl6/haw6Jc5kl3tqiXP8flX/OwzzpAuoYAkTVAJ87guSHleyhRK/nRjWHTKIOLrTKYjk/twDIosGAmcM0xWQ/+ObEoHhcGI+OjLBHKb7QvYo6kSnsJaLRjZZxR4RGk3iGpnhyAEBgX8U/qL3MNXqUbXk4u23hEXsN2fA2Ne1NzwTDl1areg2bt37e/yxzZZBOHRhSHSAhjorPb6C30rxaaFHqjLi54wcqivBAgHYlc+Mh3ypA+p89+Ci+WQRHqV97HELzhMUE=
