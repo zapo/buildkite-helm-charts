@@ -1,4 +1,5 @@
 #!/bin/bash -e
+
 # USAGE: repo-sync.sh <commit-changes?>
 
 log () {
@@ -79,4 +80,3 @@ fi
 log "Repository cleanup and reset"
 git reset --hard upstream/master
 git clean -df .
-
