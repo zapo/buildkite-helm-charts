@@ -3,7 +3,7 @@ entries:
   buildkite:
   - apiVersion: v1
     appVersion: "3"
-    created: 2017-08-21T17:30:47.364956041Z
+    created: 2017-08-21T17:44:43.578254511Z
     description: Buildkite agent chart
     digest: 318290eb52ff658b99a992885fba02d172237541d44308b6c554e48851e68945
     home: https://buildkite.com
@@ -20,6 +20,6 @@ entries:
     sources:
     - https://github.com/buildkite/agent
     urls:
-    - https://buildkite.github.io/charts/buildkite-0.1.1.tgz
+    - https://github.com/buildkite/charts/buildkite-0.1.1.tgz
     version: 0.1.1
-generated: 2017-08-21T17:30:47.356055068Z
+generated: 2017-08-21T17:44:43.577517807Z
