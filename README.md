@@ -4,11 +4,11 @@ The official [Buildkite Agent](https://buildkite.com/docs/agent) Charts reposito
 
 ## Getting Started
 
-### Add Buildkite Helm chart repository:
+### Clone Buildkite Helm chart repository:
 
 ```bash
-$ helm repo add bk https://buildkite.github.io/charts/
-$ helm repo update
+$ git clone git@github.com:buildkite/charts.git
+$ cd charts
 ```
 
 ### Install chart
@@ -16,7 +16,7 @@ $ helm repo update
 To install the chart with the release name `bk-agent`:
 
 ```bash
-$ helm install buildkite/buildkite --name bk-agent --namespace buildkite --set agent.token="BUILDKITE_AGENT_TOKEN"
+$ helm install buildkite --name bk-agent --namespace buildkite --set agent.token="BUILDKITE_AGENT_TOKEN"
 ```
 
 Check Agent chart [readme](charts/buildkite/README.md) for more customisation options.

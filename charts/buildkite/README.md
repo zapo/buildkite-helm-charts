@@ -16,12 +16,12 @@ In order for the chart to configure the Buildkite Agent properly during the inst
 To install the chart with the release name `bk-agent`:
 
 ```bash
-$ helm install buildkite/buildkite --name bk-agent --namespace buildkite --set agent.token="BUILDKITE_AGENT_TOKEN"
+$ helm install buildkite --name bk-agent --namespace buildkite --set agent.token="BUILDKITE_AGENT_TOKEN"
 ```
 
 To install the chart with the release name `bk-agent` and set Agent meta-data and git repo SSH key:
 ```console
-$ helm install buildkite/buildkite --name bk-agent --namespace buildkite \
+$ helm install buildkite --name bk-agent --namespace buildkite \
   --set agent.token="$(cat buildkite.token)",agent.meta="role=production",privateSshKey="$(cat buildkite.key)"
 ```
 
