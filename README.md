@@ -4,13 +4,6 @@ The official [Buildkite Agent](https://buildkite.com/docs/agent) Charts reposito
 
 ## Getting Started
 
-### Clone Buildkite Helm chart repository:
-
-```bash
-$ git clone git@github.com:buildkite/charts.git
-$ cd charts
-```
-
 ### Install chart
 
 To install chart from Helm [charts](https://github.com/kubernetes/charts) upstream with the release name `bk-agent`:
