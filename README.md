@@ -13,7 +13,19 @@ $ cd charts
 
 ### Install chart
 
-To install the chart with the release name `bk-agent`:
+To install chart from Helm [charts](https://github.com/kubernetes/charts) upstream with the release name `bk-agent`:
+```bash
+$ help repo update
+$ helm install stable/buildkite --name bk-agent --namespace buildkite --set agent.token="BUILDKITE_AGENT_TOKEN"
+```
+
+Also you can install chart by cloning this repo:
+```bash
+$ git clone git@github.com:buildkite/charts.git
+$ cd charts
+```
+
+And then install the chart with the release name `bk-agent`:
 
 ```bash
 $ helm install buildkite --name bk-agent --namespace buildkite --set agent.token="BUILDKITE_AGENT_TOKEN"
