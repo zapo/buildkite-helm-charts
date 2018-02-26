@@ -8,7 +8,7 @@ The official [Buildkite Agent](https://buildkite.com/docs/agent) Charts reposito
 
 To install chart from Helm [charts](https://github.com/kubernetes/charts) upstream with the release name `bk-agent`:
 ```bash
-$ help repo update
+$ helm repo update
 $ helm install stable/buildkite --name bk-agent --namespace buildkite --set agent.token="BUILDKITE_AGENT_TOKEN"
 ```
 
