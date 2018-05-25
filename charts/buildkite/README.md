@@ -28,7 +28,7 @@ $ helm install buildkite --name bk-agent --namespace buildkite \
 Where `--set` values contain:
 ```
 agentToken: Buildkite token read from file
-agentMeta: tagging agent with - role=production
+agentMeta: tagging agent with - role=production (to add multiple tags, you must separate them with an escaped comma, like this: role=production\,queue=kubernetes)
 privateSshKey: private SSH key read from file
 ```
 
