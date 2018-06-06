@@ -62,6 +62,8 @@ Parameter | Description | Default
 `registryCreds.dockerConfig` | Private registry docker config.json | `nil`
 `resources` | pod resource requests & limits | `{}`
 `nodeSelector` | node labels for pod assignment | `{}`
+`volumeMounts` | Extra volumeMounts configuration | `nil`
+`volumes` | Extra volumes configuration | `nil`
 
 ## Buildkite pipeline examples
 
