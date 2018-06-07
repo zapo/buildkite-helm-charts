@@ -17,13 +17,26 @@ agent:
   meta: "role=agent"
 
 # Extra env vars to be passed
-# If you do want to xxtra env vars to pass to agent, uncomment the following
+# If you do want to pass extra env vars to the agent, uncomment the following
 # lines, adjust them as necessary.
 #extraEnv:
 #  - name: test1
 #    value: "test1"
 #  - name: test2
 #    value: "test2"
+
+# Extra volumeMounts for the container
+# If you do want to mount extra volumes to the agent container, uncomment the
+# following lines, adjust them as necessary.
+#
+#volumeMounts:
+#  - name: my-secrets
+#    value: "/chamber-of-secrets"
+#
+#volumes:
+#  - name: my-secrets
+#    secret:
+#      secretName: "some-k8s-secret"
 
 # Your ssh private key if you want to access private git repository
 privateSshKey: ""

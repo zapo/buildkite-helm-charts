@@ -44,6 +44,7 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           volumeMounts:
+{{- if .Values.volumeMounts }}{{ toYaml .Values.volumeMounts | nindent 12 }}{{- end }}
             - name: var-run-docker-sock
               mountPath: /var/run/docker.sock
             {{- if .Values.registryCreds.gcrServiceAccountKey }}
@@ -55,6 +56,7 @@ spec:
               mountPath: /root/.docker
             {{- end }}
       volumes:
+{{- if .Values.volumes }}{{ toYaml .Values.volumes | nindent 8 }}{{- end }}
         - name: var-run-docker-sock
           hostPath:
             path: /var/run/docker.sock
