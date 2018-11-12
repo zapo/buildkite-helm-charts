@@ -6,7 +6,8 @@ replicaCount: 1
 
 image:
   repository: buildkite/agent
-  tag: 3.0
+  # Note that by default we use appVersion to get image tag version
+  # tag:
   pullPolicy: IfNotPresent
 
 # Buildkite Agent settings
@@ -19,7 +20,7 @@ agent:
 # Extra env vars to be passed
 # If you do want to pass extra env vars to the agent, uncomment the following
 # lines, adjust them as necessary.
-#extraEnv:
+extraEnv: {}
 #  - name: test1
 #    value: "test1"
 #  - name: test2
@@ -29,11 +30,11 @@ agent:
 # If you do want to mount extra volumes to the agent container, uncomment the
 # following lines, adjust them as necessary.
 #
-#volumeMounts:
+volumeMounts: {}
 #  - name: my-secrets
 #    value: "/chamber-of-secrets"
 #
-#volumes:
+volumes: {}
 #  - name: my-secrets
 #    secret:
 #      secretName: "some-k8s-secret"
@@ -62,6 +63,17 @@ resources: {}
   #  cpu: 100m
   #  memory: 128Mi
 
-## Node labels for pod assignment
-## Ref: https://kubernetes.io/docs/user-guide/node-selection/
 nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# RBAC manifests management
+rbac:
+  enabled: true
+
+podDisruptionBudget:
+  enabled: false
+  maxUnavailable: 1
+  minAvailable: null

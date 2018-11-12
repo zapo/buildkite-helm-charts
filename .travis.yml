@@ -1,0 +1,33 @@
+sudo: required
+dist: trusty
+
+services:
+  - docker
+branches:
+    only:
+      - master
+
+jobs:
+  include:
+    - stage: lint-scripts
+      name: "Lint shell scripts"
+      script:
+        - ./test/lint-scripts.sh
+    - stage: charts-testing
+      name: "Lint charts"
+      env:
+        - CHART_TESTING_TAG="v2.0.0"
+        - CHARTS_REPO="https://github.com/buildkite/charts"
+      script:
+        - ./test/lint-charts.sh
+    - stage: publish-charts
+      name: "Publish charts"
+      env:
+        - HELM_VERSION=v2.11.0
+      script:
+        - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then ./.scripts/repo-sync.sh true; fi'
+
+stages:
+  - lint-scripts
+  - charts-testing
+  - publish-charts

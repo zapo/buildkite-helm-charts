@@ -1,38 +1,44 @@
 # Buildkite Helm Charts Repository
 
-The official [Buildkite Agent](https://buildkite.com/docs/agent) Charts repository for [Helm](https://helm.sh), the package manager for [Kubernetes](http://kubernetes.io).
+The official [Buildkite](https://buildkite.com/docs/agent) [Helm](https://helm.sh) Charts repository.
 
 ## Getting Started
 
+### Install Helm
+
+Get the latest [Helm release](https://github.com/kubernetes/helm#install).
+
+### Add Buildkite Helm chart repository:
+
+ ```console
+ $ helm repo add buildkite https://buildkite.github.io/charts/
+ $ helm repo update
+ ```
+
 ### Install chart
 
-To install chart from Helm [charts](https://github.com/kubernetes/charts) upstream with the release name `bk-agent`:
-```bash
-$ helm repo update
-$ helm install stable/buildkite --name bk-agent --namespace buildkite --set agent.token="BUILDKITE_AGENT_TOKEN"
+To install the Agent chart with the release name `bk-agent`:
+
+```console
+$ helm install --name bk-agent --namespace buildkite buildkite/agent --set agent.token="BUILDKITE_AGENT_TOKEN"
 ```
 
-Also you can install chart by cloning this repo:
-```bash
-$ git clone git@github.com:buildkite/charts.git
-$ cd charts
-```
+Check Agent chart [readme](stable/agent/README.md) for more customisation options.
 
-And then install the chart with the release name `bk-agent`:
+** You’ve now got Buildkite Agents running on your Kubernetes cluster! :tada: **
 
-```bash
-$ helm install buildkite --name bk-agent --namespace buildkite --set agent.token="BUILDKITE_AGENT_TOKEN"
-```
+## Contributing to Buildkite Charts
 
-Check Agent chart [readme](charts/buildkite/README.md) for more customisation options.
+Fork the `repo`, make changes and test it by installing the chart to see it is working. :)
 
-### You’ve now got Buildkite Agents running on your Kubernetes cluster! :tada:
+On success make a [pull request](https://help.github.com/articles/using-pull-requests) (PR).
+
+Upon successful review, someone will give the PR a __LGTM__ in the review thread.
 
 ## Thanks :heart:
 
-* A massive thanks to [Rimas Mocevicius](https://github.com/rimusz) for authoring these charts
-
+* A massive thanks to [Rimas Mocevicius](https://github.com/rimusz) for authoring Buildkite Agent chart.
 
 ## Copyright
 
-Copyright (c) 2017 Buildkite Pty Ltd. See [LICENSE](LICENSE) for details.
+Copyright (c) 2018 Buildkite Pty Ltd. See [LICENSE](LICENSE) for details.
