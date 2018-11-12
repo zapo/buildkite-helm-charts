@@ -16,7 +16,7 @@ Pods will not go to the running state if the Buildkite Agent Token was not provi
 
 This deployment will be incomplete until you provide Buildkite Agent Token:
 
-  helm upgrade {{ template "fullname" . }} builkite \
+  helm upgrade {{ template "fullname" . }} builkite/agent \
       --set agent.token="YOUR_BUILKITE_TOKEN"
 
 {{- end }}

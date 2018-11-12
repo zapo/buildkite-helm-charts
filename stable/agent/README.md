@@ -15,13 +15,14 @@ In order for the chart to configure the Buildkite Agent properly during the inst
 
 To install the chart with the release name `bk-agent`:
 
-```bash
-$ helm install buildkite --name bk-agent --namespace buildkite --set agent.token="BUILDKITE_AGENT_TOKEN"
+```console
+$ helm install --name bk-agent --namespace buildkite buildkite/agent --set agent.token="BUILDKITE_AGENT_TOKEN"
 ```
 
 To install the chart with the release name `bk-agent` and set Agent meta-data and git repo SSH key:
+
 ```console
-$ helm install buildkite --name bk-agent --namespace buildkite \
+$ helm install --name bk-agent --namespace buildkite buildkite/agent \
   --set agent.token="$(cat buildkite.token)",agent.meta="role=production",privateSshKey="$(cat buildkite.key)"
 ```
 
@@ -38,7 +39,7 @@ privateSshKey: private SSH key read from file
 
 To uninstall/delete the `bk-agent` release:
 
-```bash
+```console
 $ helm delete bk-agent
 ```
 
@@ -51,8 +52,8 @@ The following table lists the configurable parameters of the `buildkite` chart a
 Parameter | Description | Default
 --- | --- | ---
 `replicaCount` | Replicas count | 1
-`image.repository` | Image | `buildkite/agent`
-`image.tag` | Image tag | `3.0`
+`image.repository` | Image repository | `buildkite/agent`
+`image.tag` | Image tag | ``
 `image.pullPolicy` | Image pull policy | `IfNotPresent`
 `agent.token` | Agent token | Must be specified
 `agent.meta` | Agent meta-data | `role=agent`
@@ -60,10 +61,22 @@ Parameter | Description | Default
 `privateSshKey` | Agent ssh key for git access | `nil`
 `registryCreds.gcrServiceAccountKey` | GCP Service account json key | `nil`
 `registryCreds.dockerConfig` | Private registry docker config.json | `nil`
-`resources` | pod resource requests & limits | `{}`
-`nodeSelector` | node labels for pod assignment | `{}`
 `volumeMounts` | Extra volumeMounts configuration | `nil`
 `volumes` | Extra volumes configuration | `nil`
+`resources` | Pod resource requests & limits | `{}`
+`nodeSelector` | Node labels for pod assignment | `{}`
+`tolerations` | Node tolerations for pod assignment | `{}`
+`affinity` | Node/pod affinity | `{}`
+
+Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
+
+Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example:
+
+```console
+$ helm install --name bk-agent --namespace buildkite buildkite/agent -f values.yaml 
+```
+
+> **Tip**: You can use the default [values.yaml](values.yaml)
 
 ## Buildkite pipeline examples
 
