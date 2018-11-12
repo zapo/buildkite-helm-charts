@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# USAGE: repo-sync.sh <commit-changes?>
 
 set -o errexit
 set -o nounset
@@ -10,47 +9,20 @@ set -o pipefail
    echo -e "\033[0;33m$(date "+%H:%M:%S")\033[0;37m ==> $1."
  }
 
- install_helm_cli() {
-   mkdir tmp
-   curl -k -L https://storage.googleapis.com/kubernetes-helm/helm-"${HELM_VERSION}"-linux-amd64.tar.gz > tmp/helm.tar.gz
-   tar xvf tmp/helm.tar.gz -C tmp --strip=1 linux-amd64/helm > /dev/null 2>&1
-   chmod +x tmp/helm
-   sudo mv tmp/helm /usr/local/bin/
-   helm init --client-only
- }
-
- travis_setup_git() {
-   git config user.email "travis@travis-ci.org"
-   git config user.name "Travis CI"
-   COMMIT_MSG="Updating chart repository, travis build #$TRAVIS_BUILD_NUMBER"
-   git remote add upstream "https://$GH_TOKEN@github.com/buildkite/charts.git"
- }
-
- show_important_vars() {
+show_important_vars() {
      echo "  REPO_URL: $REPO_URL"
      echo "  BUILD_DIR: $BUILD_DIR"
      echo "  REPO_DIR: $REPO_DIR"
-     echo "  TRAVIS: $TRAVIS"
-     echo "  COMMIT_CHANGES: $COMMIT_CHANGES"
  }
 
- COMMIT_CHANGES="${1}"
- : "${COMMIT_CHANGES:=false}"
- : "${TRAVIS:=false}"
  REPO_URL=https://buildkite.github.io/charts
  BUILD_DIR=$(mktemp -d)
  REPO_DIR="$( pwd )"
  COMMIT_MSG="Updating chart repository"
 
  show_important_vars
- install_helm_cli
- 
- if [ $TRAVIS != "false" ]; then
-   log "Configuring git for Travis-ci"
-   travis_setup_git
- else
-   git remote add upstream git@github.com:buildkite/charts.git || true
- fi
+
+ git remote add upstream git@github.com:buildkite/charts.git || true
 
  git fetch upstream
  git checkout gh-pages
@@ -84,15 +56,12 @@ set -o pipefail
  cp "$BUILD_DIR"/* "$REPO_DIR"
  rm -fr .github
 
- # Commit changes are not enabled during PR
- if [ $COMMIT_CHANGES != "false" ]; then
-   log "Commiting changes to gh-pages branch"
-    # shellcheck disable=SC2035
-   git add *.tgz index.yaml
-   git commit --message "$COMMIT_MSG"
-   git push -q upstream HEAD:gh-pages
- fi
-
+ log "Commiting changes to gh-pages branch"
+ # shellcheck disable=SC2035
+ git add *.tgz index.yaml
+ git commit --message "$COMMIT_MSG"
+ git push -q upstream HEAD:gh-pages
+ 
  log "Repository cleanup and reset"
  git reset --hard upstream/master
  git clean -df .
