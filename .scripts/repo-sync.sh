@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
+# USAGE: repo-sync.sh <commit-changes?>
 
 set -o errexit
 set -o nounset
 set -o pipefail
-
- # USAGE: repo-sync.sh <commit-changes?>
 
  log() {
    # shellcheck disable=SC1117
