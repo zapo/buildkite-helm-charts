@@ -20,15 +20,15 @@ agent:
 # Extra env vars to be passed
 # If you do want to pass extra env vars to the agent, uncomment the following
 # lines, adjust them as necessary.
-extraEnv: {}
+extraEnv:
 #  - name: test1
 #    value: "test1"
 #  - name: test2
 #    value: "test2"
 
-# Extra volumeMounts for the container
-# If you do want to mount extra volumes to the agent container, uncomment the
-# following lines, adjust them as necessary.
+# Mount extra Secrets
+# If you do want to mount extra Secrets via volume mounts to the agent container, 
+# uncomment the following lines, adjust them as necessary.
 #
 volumeMounts: {}
 #  - name: my-secrets
@@ -50,6 +50,15 @@ registryCreds:
   # base64 encoded private registry docker config.json file
   # for quay.io, docker hub, ecr and etc
   dockerConfig: ""
+
+livenessProbe: {}
+  # Uncomment below to enable docker socket liveness probe
+  # initialDelaySeconds: 15
+  # timeoutSeconds: 1
+  # exec:
+  #   command:
+  #   - docker
+  #   - ps
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
