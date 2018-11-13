@@ -11,8 +11,8 @@ Get the latest [Helm release](https://github.com/kubernetes/helm#install).
 ### Add Buildkite Helm chart repository:
 
  ```console
- $ helm repo add buildkite https://buildkite.github.io/charts/
- $ helm repo update
+ helm repo add buildkite https://buildkite.github.io/charts/
+ helm repo update
  ```
 
 ### Install chart
@@ -20,7 +20,7 @@ Get the latest [Helm release](https://github.com/kubernetes/helm#install).
 To install the Agent chart with the release name `bk-agent`:
 
 ```console
-$ helm install --name bk-agent --namespace buildkite buildkite/agent --set agent.token="BUILDKITE_AGENT_TOKEN"
+helm install --name bk-agent --namespace buildkite buildkite/agent --set agent.token="BUILDKITE_AGENT_TOKEN"
 ```
 
 Check Agent chart [readme](stable/agent/README.md) for more customisation options.

@@ -48,4 +48,4 @@ rules:
       - get
       - create
       - update
-{{ end }}
+{{- end }}

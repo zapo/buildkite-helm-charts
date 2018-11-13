@@ -16,14 +16,17 @@ In order for the chart to configure the Buildkite Agent properly during the inst
 To install the chart with the release name `bk-agent`:
 
 ```console
-$ helm install --name bk-agent --namespace buildkite buildkite/agent --set agent.token="BUILDKITE_AGENT_TOKEN"
+helm install --name bk-agent --namespace buildkite buildkite/agent \
+    --set agent.token="BUILDKITE_AGENT_TOKEN"
 ```
 
 To install the chart with the release name `bk-agent` and set Agent meta-data and git repo SSH key:
 
 ```console
-$ helm install --name bk-agent --namespace buildkite buildkite/agent \
-  --set agent.token="$(cat buildkite.token)",agent.meta="role=production",privateSshKey="$(cat buildkite.key)"
+helm install --name bk-agent --namespace buildkite buildkite/agent \
+  --set agent.token="$(cat buildkite.token)",agent.meta="role=production" \
+  --set privateSshKey="$(cat buildkite.key)"  \
+  --set registryCreds.gcrServiceAccountKey: "$(cat gcr_service_account.key | base64)"
 ```
 
 Where `--set` values contain:
@@ -31,6 +34,7 @@ Where `--set` values contain:
 agentToken: Buildkite token read from file
 agentMeta: tagging agent with - role=production (to add multiple tags, you must separate them with an escaped comma, like this: role=production\,queue=kubernetes)
 privateSshKey: private SSH key read from file
+registryCreds.gcrServiceAccountKey: base64 encoded gcr_service_account.key json file
 ```
 
 > **Tip**: List all releases using `helm list`
@@ -40,7 +44,7 @@ privateSshKey: private SSH key read from file
 To uninstall/delete the `bk-agent` release:
 
 ```console
-$ helm delete bk-agent
+helm delete bk-agent
 ```
 
 The command removes all the Kubernetes components associated with the chart and deletes the release.
@@ -63,7 +67,8 @@ Parameter | Description | Default
 `registryCreds.dockerConfig` | Private registry docker config.json | `nil`
 `volumeMounts` | Extra volumeMounts configuration | `nil`
 `volumes` | Extra volumes configuration | `nil`
-`resources` | Pod resource requests & limits | `{}`
+`resources` | Liveness probe for docker socket | `{}`
+`livenessProbe` | Pod resource requests & limits | `{}`
 `nodeSelector` | Node labels for pod assignment | `{}`
 `tolerations` | Node tolerations for pod assignment | `{}`
 `affinity` | Node/pod affinity | `{}`
@@ -73,10 +78,10 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example:
 
 ```console
-$ helm install --name bk-agent --namespace buildkite buildkite/agent -f values.yaml 
+helm install --name bk-agent --namespace buildkite buildkite/agent -f values.yaml 
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default [values.yaml](values.yaml) file
 
 ## Buildkite pipeline examples
 
