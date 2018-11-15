@@ -51,8 +51,8 @@ registryCreds:
   # for quay.io, docker hub, ecr and etc
   dockerConfig: ""
 
-livenessProbe: {}
-  # Uncomment below to enable docker socket liveness probe
+ # Uncomment below to enable docker socket liveness probe
+livenessProbe:
   # initialDelaySeconds: 15
   # timeoutSeconds: 1
   # exec:
