@@ -10,15 +10,6 @@ set -o pipefail
    echo -e "\033[0;33m$(date "+%H:%M:%S")\033[0;37m ==> $1."
  }
 
- install_helm_cli() {
-   mkdir tmp
-   curl -k -L https://storage.googleapis.com/kubernetes-helm/helm-"${HELM_VERSION}"-linux-amd64.tar.gz > tmp/helm.tar.gz
-   tar xvf tmp/helm.tar.gz -C tmp --strip=1 linux-amd64/helm > /dev/null 2>&1
-   chmod +x tmp/helm
-   sudo mv tmp/helm /usr/local/bin/
-   helm init --client-only
- }
-
  git_setup_git() {
    git config user.email "gcb@gmail.com"
    git config user.name "GCB CI"
@@ -42,7 +33,6 @@ set -o pipefail
  COMMIT_MSG="Updating chart repository"
 
  show_important_vars
- install_helm_cli
  
  log "Configuring git for gcb-ci"
  git_setup_git
