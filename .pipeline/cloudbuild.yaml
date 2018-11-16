@@ -3,6 +3,7 @@ steps:
 # Release charts
 - name: 'ubuntu'
   env:
+  - 'HELM_VERSION=v2.11.0'
   - 'GH_TOKEN=${_GH_TOKEN}'
   entrypoint: 'bash'
   args:
