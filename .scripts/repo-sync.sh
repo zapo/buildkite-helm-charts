@@ -19,10 +19,10 @@ set -o pipefail
    helm init --client-only
  }
 
- travis_setup_git() {
-   git config user.email "travis@travis-ci.org"
-   git config user.name "Travis CI"
-   COMMIT_MSG="Updating chart repository, travis build #$TRAVIS_BUILD_NUMBER"
+ git_setup_git() {
+   git config user.email "gcb@gmail.com"
+   git config user.name "GCB CI"
+   COMMIT_MSG="Updating chart repository, commit #$COMMIT_SHA"
    git remote add upstream "https://$GH_TOKEN@github.com/buildkite/charts.git"
  }
 
@@ -30,7 +30,6 @@ set -o pipefail
      echo "  REPO_URL: $REPO_URL"
      echo "  BUILD_DIR: $BUILD_DIR"
      echo "  REPO_DIR: $REPO_DIR"
-     echo "  TRAVIS: $TRAVIS"
      echo "  COMMIT_CHANGES: $COMMIT_CHANGES"
  }
 
@@ -45,12 +44,8 @@ set -o pipefail
  show_important_vars
  install_helm_cli
  
- if [ $TRAVIS != "false" ]; then
-   log "Configuring git for Travis-ci"
-   travis_setup_git
- else
-   git remote add upstream git@github.com:buildkite/charts.git || true
- fi
+ log "Configuring git for gcb-ci"
+ git_setup_git
 
  git fetch upstream
  git checkout gh-pages
@@ -84,14 +79,11 @@ set -o pipefail
  cp "$BUILD_DIR"/* "$REPO_DIR"
  rm -fr .github
 
- # Commit changes are not enabled during PR
- if [ $COMMIT_CHANGES != "false" ]; then
-   log "Commiting changes to gh-pages branch"
-    # shellcheck disable=SC2035
-   git add *.tgz index.yaml
-   git commit --message "$COMMIT_MSG"
-   git push -q upstream HEAD:gh-pages
- fi
+ log "Commiting changes to gh-pages branch"
+ # shellcheck disable=SC2035
+ git add *.tgz index.yaml
+ git commit --message "$COMMIT_MSG"
+ git push -q upstream HEAD:gh-pages
 
  log "Repository cleanup and reset"
  git reset --hard upstream/master
