@@ -3,9 +3,9 @@ entries:
   agent:
   - apiVersion: v1
     appVersion: 3.5.4
-    created: 2018-11-13T09:34:08.845975987Z
+    created: 2018-11-16T14:58:54.583229647Z
     description: Buildkite Agent Chart
-    digest: e197ce8310b60251f12e0db492356a1bc9b0d99f25788e86b8c3984077242533
+    digest: 9b6c59ffb5b2279f12682ee953f3749794e45ee7ba914977d039d3515f5dc06e
     home: https://buildkite.com
     icon: https://github.com/buildkite/media/blob/master/marks/Buildkite%20-%20Mark%20-%20colour.png
     keywords:
@@ -20,6 +20,6 @@ entries:
     sources:
     - https://github.com/buildkite/agent
     urls:
-    - https://buildkite.github.io/charts/agent-0.3.2.tgz
-    version: 0.3.2
-generated: 2018-11-13T09:34:08.844670946Z
+    - https://buildkite.github.io/charts/agent-0.3.3.tgz
+    version: 0.3.3
+generated: 2018-11-16T14:58:54.581963563Z
