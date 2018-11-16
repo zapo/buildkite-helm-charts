@@ -4,6 +4,7 @@ steps:
 - name: 'ubuntu'
   env:
   - 'GH_TOKEN=${_GH_TOKEN}'
+  - 'COMMIT_SHA=$COMMIT_SHA'
   entrypoint: 'bash'
   args:
   - '-c'
@@ -15,4 +16,4 @@ steps:
     chmod 700 /workspace/tmp/get_helm.sh
     /workspace/tmp/get_helm.sh
     helm init --client-only
-    ./.scripts/repo-sync.sh true
+    ./.scripts/repo-sync.sh
