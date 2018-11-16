@@ -10,7 +10,7 @@ set -o pipefail
    echo -e "\033[0;33m$(date "+%H:%M:%S")\033[0;37m ==> $1."
  }
 
- git_setup_git() {
+ setup_git() {
    git config user.email "gcb@gmail.com"
    git config user.name "GCB CI"
    COMMIT_MSG="Updating chart repository, commit #$COMMIT_SHA"
@@ -21,12 +21,8 @@ set -o pipefail
      echo "  REPO_URL: $REPO_URL"
      echo "  BUILD_DIR: $BUILD_DIR"
      echo "  REPO_DIR: $REPO_DIR"
-     echo "  COMMIT_CHANGES: $COMMIT_CHANGES"
  }
 
- COMMIT_CHANGES="${1}"
- : "${COMMIT_CHANGES:=false}"
- : "${TRAVIS:=false}"
  REPO_URL=https://buildkite.github.io/charts
  BUILD_DIR=$(mktemp -d)
  REPO_DIR="$( pwd )"
@@ -35,7 +31,7 @@ set -o pipefail
  show_important_vars
  
  log "Configuring git for gcb-ci"
- git_setup_git
+ setup_git
 
  git fetch upstream
  git checkout gh-pages
