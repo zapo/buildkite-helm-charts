@@ -1,0 +1,11 @@
+steps:
+
+# Release charts
+- name: 'ubuntu'
+  env:
+  - 'GH_TOKEN=${_GH_TOKEN}'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    ./.scripts/repo-sync.sh true
