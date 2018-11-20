@@ -1,6 +1,7 @@
 UPSTREAM_GIT_URL = https://github.com/buildkite/charts.git
 CHARTS_URL = https://buildkite.github.io/charts
 CT_IMAGE = gcr.io/kubernetes-charts-ci/test-image:v3.0.1
+COMMIT = $(shell git rev-parse --short HEAD)
 
 .PHONY: lint shellcheck clean build publish
 
@@ -39,8 +40,8 @@ build: dist-repo
 		git diff --stat
 
 # Commit and push the chart index
-publish: dist-repo build
+release:
 	cd dist-repo && \
 		git add *.tgz index.yaml && \
-		git commit --message "Update buildkite/charts" && \
-		git push -q upstream HEAD:gh-pages
+		git commit --message "Update to buildkite/charts@${COMMIT}" && \
+		git push origin gh-pages
