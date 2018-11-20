@@ -1,21 +1,17 @@
 steps:
   - label: ":terminal: Lint Scripts"
-    commands:
-      - shellcheck -x .scripts/repo-sync.sh
-      - shellcheck -x .scripts/repo-sync-local.sh
-    plugins:
-      - docker#v2.0.0:
-          image: koalaman/shellcheck-alpine
+    commands: make shellcheck
     agents:
       queue: "$BUILDKITE_AGENT_META_DATA_QUEUE"
 
   - label: ":helm: Lint Charts"
-    plugins:
-      - docker#v2.0.0:
-          image: gcr.io/kubernetes-charts-ci/test-image:v3.0.1
-    commands:
-      - git remote add k8s https://github.com/buildkite/charts || true
-      - git fetch k8s master
-      - ct lint --config test/ct.yaml
+    commands: make lint
     agents:
       queue: "$BUILDKITE_AGENT_META_DATA_QUEUE"
+
+  - label: ":shipit:" 
+    commands: make release
+    env:
+      GIT_AUTHOR_NAME: "Buildkite CI"
+      GIT_AUTHOR_EMAIL: "support@buildkite.com"
+    branches: master
