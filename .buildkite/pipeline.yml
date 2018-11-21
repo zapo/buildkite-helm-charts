@@ -8,10 +8,3 @@ steps:
     commands: make lint
     agents:
       queue: "$BUILDKITE_AGENT_META_DATA_QUEUE"
-
-  - label: ":shipit:" 
-    commands: make build release
-    env:
-      GIT_AUTHOR_NAME: "Buildkite CI"
-      GIT_AUTHOR_EMAIL: "support@buildkite.com"
-    branches: master
