@@ -1,26 +1,21 @@
 version: 2
 jobs:
   lint-scripts:
-    docker:
-      - image: koalaman/shellcheck-alpine
+    machine:
+      enabled: true
     steps:
       - checkout
       - run:
-          name: lint
-          command: |
-            shellcheck -x .scripts/repo-sync.sh
-            shellcheck -x .scripts/repo-sync-local.sh
+          name: shellcheck
+          command: make shellcheck
   lint-charts:
-    docker:
-      - image: gcr.io/kubernetes-charts-ci/test-image:v3.0.1
+    machine:
+      enabled: true
     steps:
       - checkout
       - run:
           name: lint
-          command: |
-            git remote add k8s https://github.com/buildkite/charts
-            git fetch k8s master
-            ct lint --config test/ct.yaml
+          command: make lint
 
 workflows:
   version: 2
