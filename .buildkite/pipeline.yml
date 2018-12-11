@@ -1,10 +1,6 @@
 steps:
   - label: ":terminal: Lint Scripts"
     commands: make shellcheck
-    agents:
-      queue: "$BUILDKITE_AGENT_META_DATA_QUEUE"
 
   - label: ":helm: Lint Charts"
     commands: make lint
-    agents:
-      queue: "$BUILDKITE_AGENT_META_DATA_QUEUE"

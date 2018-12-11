@@ -7,5 +7,3 @@ steps:
     commands: make build release
     concurrency_group: "${BUILDKITE_PIPELINE_SLUG}/deploy"
     concurrency: 1
-    agents:
-      queue: "$BUILDKITE_AGENT_META_DATA_QUEUE"
