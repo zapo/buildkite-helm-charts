@@ -27,7 +27,7 @@ extraEnv:
 #    value: "test2"
 
 # Mount extra Secrets
-# If you do want to mount extra Secrets via volume mounts to the agent container, 
+# If you do want to mount extra Secrets via volume mounts to the agent container,
 # uncomment the following lines, adjust them as necessary.
 #
 volumeMounts: {}
