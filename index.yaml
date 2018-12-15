@@ -3,7 +3,28 @@ entries:
   agent:
   - apiVersion: v1
     appVersion: 3.5.4
-    created: 2018-11-19T10:30:14.805125879Z
+    created: 2018-12-15T12:06:05.3876172Z
+    description: Buildkite Agent Chart
+    digest: 6b849196425ae739734fce7b94573eb8eefc2aed92ed1289e0e96bafcc4e159a
+    home: https://buildkite.com
+    icon: https://raw.githubusercontent.com/buildkite/site/master/assets/images/brand-assets/buildkite-mark-on-light.png
+    keywords:
+    - kubernetes deployment
+    - helm release
+    - continuous deployment
+    - continuous integration
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: agent
+    sources:
+    - https://github.com/buildkite/agent
+    urls:
+    - https://buildkite.github.io/charts/agent-0.3.4.tgz
+    version: 0.3.4
+  - apiVersion: v1
+    appVersion: 3.5.4
+    created: 2018-12-15T12:06:05.382996Z
     description: Buildkite Agent Chart
     digest: d079e9835b7a5d0c90b433fdfa514fd34fc501c4d23b99c65205b14f021dcc11
     home: https://buildkite.com
@@ -22,4 +43,46 @@ entries:
     urls:
     - https://buildkite.github.io/charts/agent-0.3.3.tgz
     version: 0.3.3
-generated: 2018-11-19T10:30:14.804187126Z
+  - apiVersion: v1
+    appVersion: 3.5.4
+    created: 2018-12-15T12:06:05.374935Z
+    description: Buildkite Agent Chart
+    digest: e197ce8310b60251f12e0db492356a1bc9b0d99f25788e86b8c3984077242533
+    home: https://buildkite.com
+    icon: https://github.com/buildkite/media/blob/master/marks/Buildkite%20-%20Mark%20-%20colour.png
+    keywords:
+    - kubernetes deployment
+    - helm release
+    - continuous deployment
+    - continuous integration
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: agent
+    sources:
+    - https://github.com/buildkite/agent
+    urls:
+    - https://buildkite.github.io/charts/agent-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v1
+    appVersion: 3.5.4
+    created: 2018-12-15T12:06:05.3622556Z
+    description: Buildkite Agent Chart
+    digest: adc4da85c2b3f20a4757beafee16deb37d8a237009b88695b55c7b737487318a
+    home: https://buildkite.com
+    icon: https://github.com/buildkite/media/blob/master/marks/Buildkite%20-%20Mark%20-%20colour.png
+    keywords:
+    - kubernetes deployment
+    - helm release
+    - continuous deployment
+    - continuous integration
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: agent
+    sources:
+    - https://github.com/buildkite/agent
+    urls:
+    - https://buildkite.github.io/charts/agent-0.3.1.tgz
+    version: 0.3.1
+generated: 2018-12-15T12:06:05.3544798Z
