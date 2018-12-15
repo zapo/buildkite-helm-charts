@@ -3,9 +3,9 @@ entries:
   agent:
   - apiVersion: v1
     appVersion: 3.5.4
-    created: 2018-12-15T12:06:05.3876172Z
+    created: 2018-12-15T12:07:01.0817328Z
     description: Buildkite Agent Chart
-    digest: 6b849196425ae739734fce7b94573eb8eefc2aed92ed1289e0e96bafcc4e159a
+    digest: 8c515ac52d0f67430e1741c1aa03fa2843fb750ac2ff69fe0e55f015eb364616
     home: https://buildkite.com
     icon: https://raw.githubusercontent.com/buildkite/site/master/assets/images/brand-assets/buildkite-mark-on-light.png
     keywords:
@@ -24,7 +24,7 @@ entries:
     version: 0.3.4
   - apiVersion: v1
     appVersion: 3.5.4
-    created: 2018-12-15T12:06:05.382996Z
+    created: 2018-12-15T12:07:01.0767912Z
     description: Buildkite Agent Chart
     digest: d079e9835b7a5d0c90b433fdfa514fd34fc501c4d23b99c65205b14f021dcc11
     home: https://buildkite.com
@@ -45,7 +45,7 @@ entries:
     version: 0.3.3
   - apiVersion: v1
     appVersion: 3.5.4
-    created: 2018-12-15T12:06:05.374935Z
+    created: 2018-12-15T12:07:01.0709474Z
     description: Buildkite Agent Chart
     digest: e197ce8310b60251f12e0db492356a1bc9b0d99f25788e86b8c3984077242533
     home: https://buildkite.com
@@ -66,7 +66,7 @@ entries:
     version: 0.3.2
   - apiVersion: v1
     appVersion: 3.5.4
-    created: 2018-12-15T12:06:05.3622556Z
+    created: 2018-12-15T12:07:01.0638364Z
     description: Buildkite Agent Chart
     digest: adc4da85c2b3f20a4757beafee16deb37d8a237009b88695b55c7b737487318a
     home: https://buildkite.com
@@ -85,4 +85,4 @@ entries:
     urls:
     - https://buildkite.github.io/charts/agent-0.3.1.tgz
     version: 0.3.1
-generated: 2018-12-15T12:06:05.3544798Z
+generated: 2018-12-15T12:07:01.0569916Z
