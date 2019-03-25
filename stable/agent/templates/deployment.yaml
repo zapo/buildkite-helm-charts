@@ -57,8 +57,10 @@ spec:
 {{ toYaml .Values.resources | indent 12 }}
           volumeMounts:
 {{- if .Values.volumeMounts }}{{ toYaml .Values.volumeMounts | nindent 12 }}{{- end }}
+{{- if .Values.enableHostDocker }}
             - name: var-run-docker-sock
               mountPath: /var/run/docker.sock
+{{- end }}
             {{- if .Values.registryCreds.gcrServiceAccountKey }}
             - name: service-key
               mountPath: /etc/service_key
@@ -69,9 +71,11 @@ spec:
             {{- end }}
       volumes:
 {{- if .Values.volumes }}{{ toYaml .Values.volumes | nindent 8 }}{{- end }}
+{{- if .Values.enableHostDocker }}
         - name: var-run-docker-sock
           hostPath:
             path: /var/run/docker.sock
+{{- end }}
         {{- if .Values.registryCreds.gcrServiceAccountKey }}
         - name: service-key
           secret:
