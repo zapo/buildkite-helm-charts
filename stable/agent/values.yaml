@@ -51,8 +51,12 @@ registryCreds:
   # base64 encoded GCP Service account json key file
   gcrServiceAccountKey: ""
   # base64 encoded private registry docker config.json file
-  # for quay.io, docker hub, ecr and etc
+  # for quay.io, docker hub, ecr and etc to mount over the container,
+  # not to be used with imagePullSecrets
   dockerConfig: ""
+  # base64 encoded private registry docker config.json file
+  # to be used with imagePullSecrets
+  dockerconfigjson: ""
 
  # Uncomment below to enable docker socket liveness probe
 livenessProbe:
