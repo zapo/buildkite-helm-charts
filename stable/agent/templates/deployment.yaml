@@ -23,12 +23,19 @@ spec:
         {{- if .Values.registryCreds.dockerConfig }}
         checksum/binarystore: {{ include (print $.Template.BasePath "/secret-registry.yaml") . | sha256sum }}
         {{- end }}
+        {{- if .Values.registryCreds.dockerconfigjson }}
+        checksum/binarystore: {{ include (print $.Template.BasePath "/secret-dockerconfigjson.yaml") . | sha256sum }}
+        {{- end }}
     spec:
       serviceAccount: {{ template "fullname" . }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ default .Chart.AppVersion .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.registryCreds.dockerconfigjson }}
+          imagePullSecrets:
+          - name: {{ template "fullname" . }}-dockerconfigjson
+          {{- end }}
           securityContext:
             privileged: true
           env:
