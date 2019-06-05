@@ -87,7 +87,7 @@ affinity: {}
 
 # RBAC manifests management
 rbac:
-  enabled: true
+  enabled: false
 
 podDisruptionBudget:
   enabled: false
