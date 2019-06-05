@@ -1,6 +1,6 @@
 UPSTREAM_GIT_URL = https://github.com/buildkite/charts.git
 CHARTS_URL = https://buildkite.github.io/charts
-CT_IMAGE = gcr.io/kubernetes-charts-ci/test-image:v3.0.1
+CT_IMAGE = gcr.io/kubernetes-charts-ci/test-image:v3.3.2
 COMMIT = $(shell git rev-parse --short HEAD)
 
 .PHONY: lint shellcheck clean build publish
