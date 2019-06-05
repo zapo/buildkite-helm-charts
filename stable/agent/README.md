@@ -8,6 +8,12 @@ It is simple, lightweight hosted [Buildkite](https://buildkite.com) CI/CD system
 This chart bootstraps a [buildkite agent](https://github.com/buildkite/docker-buildkite-agent) builder on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 As it sets `service account` it can be used to build Docker images and deploy them using `kubectl` and `helm` clients in the same cluster where agents run, without any extra setup.
 
+## Add Buildkite Helm chart repository:
+
+ ```console
+ helm repo add buildkite https://buildkite.github.io/charts/
+ helm repo update
+ ```
 
 ## Installing the Chart
 
