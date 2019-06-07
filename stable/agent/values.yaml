@@ -91,7 +91,54 @@ affinity: {}
 
 # RBAC manifests management
 rbac:
-  enabled: false
+  create: false
+  role:
+    ## Rules to create. It follows the role specification
+    rules:
+      - apiGroups:
+          - ""
+        resources:
+          - namespaces
+        verbs:
+          - watch
+          - list
+      - apiGroups:
+          - ""
+        resources:
+          - secrets
+        verbs:
+          - get
+          - watch
+          - list
+      - apiGroups:
+          - ""
+          - extensions
+          - apps
+          - batch
+        resources:
+          - pods
+          - replicasets
+          - replicationcontrollers
+          - statefulsets
+          - deployments
+          - daemonsets
+          - jobs
+          - cronjobs
+        verbs:
+          - get
+          - delete # required to delete pods during force upgrade of the same tag
+          - watch
+          - list
+          - update
+      - apiGroups:
+          - ""
+        resources:
+          - configmaps
+          - secrets
+        verbs:
+          - get
+          - create
+          - update
 
 podDisruptionBudget:
   enabled: false
