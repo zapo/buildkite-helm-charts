@@ -22,8 +22,7 @@ enableHostDocker: true
 
 # Enable security context configuration
 securityContext:
-  enabled: true
-  privileged: true
+  # privileged: true
 
 # Extra env vars to be passed
 # If you do want to pass extra env vars to the agent, uncomment the following
