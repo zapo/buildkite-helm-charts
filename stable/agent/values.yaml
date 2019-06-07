@@ -98,3 +98,6 @@ podDisruptionBudget:
   enabled: false
   maxUnavailable: 1
   minAvailable: null
+
+# Extra annotations for the pod
+podAnnotations: {}
