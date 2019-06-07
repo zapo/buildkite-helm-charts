@@ -20,6 +20,11 @@ agent:
 # Enable mounting the hosts docker socket into the agent container
 enableHostDocker: true
 
+# Enable security context configuration
+securityContext:
+  enabled: true
+  privileged: true
+
 # Extra env vars to be passed
 # If you do want to pass extra env vars to the agent, uncomment the following
 # lines, adjust them as necessary.

@@ -36,8 +36,10 @@ spec:
           imagePullSecrets:
           - name: {{ template "fullname" . }}-dockerconfigjson
           {{- end }}
+          {{- if .Values.securityContext.enabled }}
           securityContext:
-            privileged: true
+            privileged: {{ .Values.securityContext.privileged }}
+          {{- end }}
           env:
             # BUILDKITE AGENT ENV VARS
             - name: BUILDKITE_AGENT_TOKEN
