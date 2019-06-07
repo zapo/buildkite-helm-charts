@@ -26,6 +26,9 @@ spec:
         {{- if .Values.registryCreds.dockerconfigjson }}
         checksum/binarystore: {{ include (print $.Template.BasePath "/secret-dockerconfigjson.yaml") . | sha256sum }}
         {{- end }}
+{{- with .Values.podAnnotations }}
+{{ toYaml . | indent 8 }}
+{{- end }}
     spec:
       serviceAccount: {{ template "fullname" . }}
       containers:
@@ -36,8 +39,10 @@ spec:
           imagePullSecrets:
           - name: {{ template "fullname" . }}-dockerconfigjson
           {{- end }}
+{{- with .Values.securityContext }}
           securityContext:
-            privileged: true
+{{ toYaml . | indent 12 }}
+{{- end }}
           env:
             # BUILDKITE AGENT ENV VARS
             - name: BUILDKITE_AGENT_TOKEN
