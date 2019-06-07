@@ -40,6 +40,7 @@ spec:
           - name: {{ template "fullname" . }}-dockerconfigjson
           {{- end }}
 {{- with .Values.securityContext }}
+          securityContext:
 {{ toYaml . | indent 12 }}
 {{- end }}
           env:
