@@ -3,7 +3,28 @@ entries:
   agent:
   - apiVersion: v1
     appVersion: 3.12.0
-    created: "2019-06-05T09:43:20.4521937Z"
+    created: "2019-06-07T09:25:59.3130293Z"
+    description: Buildkite Agent Chart
+    digest: 677aac108d86600f4d813e37afbab4e0457332aca81366aded8efe074726457e
+    home: https://buildkite.com
+    icon: https://raw.githubusercontent.com/buildkite/site/master/assets/images/brand-assets/buildkite-mark-on-light.png
+    keywords:
+    - kubernetes deployment
+    - helm release
+    - continuous deployment
+    - continuous integration
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: agent
+    sources:
+    - https://github.com/buildkite/agent
+    urls:
+    - https://buildkite.github.io/charts/agent-0.3.9.tgz
+    version: 0.3.9
+  - apiVersion: v1
+    appVersion: 3.12.0
+    created: "2019-06-07T09:25:59.3073892Z"
     description: Buildkite Agent Chart
     digest: ac837f6ffb56c47a7c8d7cf660211538982bf15b25b1987bab84edf457d886c2
     home: https://buildkite.com
@@ -24,7 +45,7 @@ entries:
     version: 0.3.8
   - apiVersion: v1
     appVersion: 3.12.0
-    created: "2019-06-05T09:43:20.4462086Z"
+    created: "2019-06-07T09:25:59.3015462Z"
     description: Buildkite Agent Chart
     digest: 2414356a80ad0692ebeb770fb7152e35df5d69a8ffd746d5792305944fd1c137
     home: https://buildkite.com
@@ -45,7 +66,7 @@ entries:
     version: 0.3.7
   - apiVersion: v1
     appVersion: 3.5.4
-    created: "2019-06-05T09:43:20.4397855Z"
+    created: "2019-06-07T09:25:59.2941521Z"
     description: Buildkite Agent Chart
     digest: bfb9fd8678507683e7d971d0c6f5d44c29b1e3931db428e46099ab6ec49dc969
     home: https://buildkite.com
@@ -66,7 +87,7 @@ entries:
     version: 0.3.6
   - apiVersion: v1
     appVersion: 3.5.4
-    created: "2019-06-05T09:43:20.4342368Z"
+    created: "2019-06-07T09:25:59.2895495Z"
     description: Buildkite Agent Chart
     digest: 9ab53da6671f38766e2df2a906e8de12cef00a226a20a1a6047797f48744e7ed
     home: https://buildkite.com
@@ -87,7 +108,7 @@ entries:
     version: 0.3.5
   - apiVersion: v1
     appVersion: 3.5.4
-    created: "2019-06-05T09:43:20.4270255Z"
+    created: "2019-06-07T09:25:59.2845609Z"
     description: Buildkite Agent Chart
     digest: 8c515ac52d0f67430e1741c1aa03fa2843fb750ac2ff69fe0e55f015eb364616
     home: https://buildkite.com
@@ -108,7 +129,7 @@ entries:
     version: 0.3.4
   - apiVersion: v1
     appVersion: 3.5.4
-    created: "2019-06-05T09:43:20.4216423Z"
+    created: "2019-06-07T09:25:59.2791899Z"
     description: Buildkite Agent Chart
     digest: d079e9835b7a5d0c90b433fdfa514fd34fc501c4d23b99c65205b14f021dcc11
     home: https://buildkite.com
@@ -129,7 +150,7 @@ entries:
     version: 0.3.3
   - apiVersion: v1
     appVersion: 3.5.4
-    created: "2019-06-05T09:43:20.4125285Z"
+    created: "2019-06-07T09:25:59.2732569Z"
     description: Buildkite Agent Chart
     digest: e197ce8310b60251f12e0db492356a1bc9b0d99f25788e86b8c3984077242533
     home: https://buildkite.com
@@ -150,7 +171,7 @@ entries:
     version: 0.3.2
   - apiVersion: v1
     appVersion: 3.5.4
-    created: "2019-06-05T09:43:20.4079538Z"
+    created: "2019-06-07T09:25:59.2689639Z"
     description: Buildkite Agent Chart
     digest: adc4da85c2b3f20a4757beafee16deb37d8a237009b88695b55c7b737487318a
     home: https://buildkite.com
@@ -169,4 +190,4 @@ entries:
     urls:
     - https://buildkite.github.io/charts/agent-0.3.1.tgz
     version: 0.3.1
-generated: "2019-06-05T09:43:20.4038182Z"
+generated: "2019-06-07T09:25:59.2630147Z"
