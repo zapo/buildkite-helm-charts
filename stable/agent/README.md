@@ -68,8 +68,7 @@ Parameter | Description | Default
 `agent.token` | Agent token | Must be specified
 `agent.meta` | Agent meta-data | `role=agent`
 `enableHostDocker` | Mount docker socket | `true`
-`securityContext.enabled` | Whether to enable securityContext | `true`
-`securityContext.privileged` | Whether to enable running the container in privileged mode | `true`
+`securityContext` | Pod security context to set | `{}`
 `extraEnv` | Agent extra env vars | `nil`
 `privateSshKey` | Agent ssh key for git access | `nil`
 `registryCreds.gcrServiceAccountKey` | GCP Service account json key | `nil`
