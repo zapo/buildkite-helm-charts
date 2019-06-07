@@ -126,7 +126,7 @@ rbac:
           - cronjobs
         verbs:
           - get
-          - delete # required to delete pods during force upgrade of the same tag
+          - delete
           - watch
           - list
           - update
