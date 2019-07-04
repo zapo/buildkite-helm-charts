@@ -32,7 +32,7 @@ To install the chart with the release name `bk-agent` and set Agent meta-data an
 helm install --name bk-agent --namespace buildkite buildkite/agent \
   --set agent.token="$(cat buildkite.token)",agent.meta="role=production" \
   --set privateSshKey="$(cat buildkite.key)"  \
-  --set registryCreds.gcrServiceAccountKey: "$(cat gcr_service_account.key | base64)"
+  --set registryCreds.gcrServiceAccountKey="$(cat gcr_service_account.key | base64)"
 ```
 
 Where `--set` values contain:
