@@ -77,6 +77,7 @@ Parameter | Description | Default
 `rbac.role.rules` | List of rules following the role specification | See [values.yaml](values.yaml)
 `volumeMounts` | Extra volumeMounts configuration | `nil`
 `volumes` | Extra volumes configuration | `nil`
+`podContainers` | Extra pod container or sidecar configuration | `nil`
 `resources` | Liveness probe for docker socket | `{}`
 `livenessProbe` | Pod resource requests & limits | `{}`
 `nodeSelector` | Node labels for pod assignment | `{}`
