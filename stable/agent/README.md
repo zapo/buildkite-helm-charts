@@ -83,6 +83,10 @@ Parameter | Description | Default
 `tolerations` | Node tolerations for pod assignment | `{}`
 `affinity` | Node/pod affinity | `{}`
 `podAnnotations` | Extra annotation to apply to the pod | `{}`
+`podContainers` | Extra pod container or sidecar configuration | `nil`
+`dind.enabled` | Enable preconfigured Docker-in-Docker (DinD) pod configuration | `false`
+`dind.image` | Image to use for Docker-in-Docker (DinD) pod | `docker:19.03-dind`
+`dind.port` | Port Docker-in-Docker (DinD) daemon listens on as REST request proxy | `2375`
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 
