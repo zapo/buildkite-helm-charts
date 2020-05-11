@@ -64,7 +64,7 @@ spec:
             {{- end }}
             {{- if .Values.dind.enabled }}
             - name: DOCKER_HOST
-              value: "tcp://localhost:2375"
+              value: "tcp://localhost:{{ .Values.dind.port | default "2375" }}"
             {{- end }}
             # EXTRA BUILDKITE AGENT ENV VARS
 {{- if .Values.extraEnv }}
