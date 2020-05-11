@@ -147,3 +147,18 @@ podDisruptionBudget:
 
 # Extra annotations for the pod
 podAnnotations: {}
+
+# Extra "sidecar" containers for the pod
+podContainers: {}
+# - name: container-name
+#   image: container-image:tag
+#   args: ["cmd"]
+#   env:
+#   - name: VAR_NAME
+#     value: var_value
+
+# Preconfigured Docker-in-Docker (DinD) container specification
+dind:
+  enabled: false
+  image: docker:19.03-dind
+  port: 2375
