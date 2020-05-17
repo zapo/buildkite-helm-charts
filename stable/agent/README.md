@@ -26,11 +26,11 @@ helm install --name bk-agent --namespace buildkite buildkite/agent \
     --set agent.token="BUILDKITE_AGENT_TOKEN"
 ```
 
-To install the chart with the release name `bk-agent` and set Agent meta-data and git repo SSH key:
+To install the chart with the release name `bk-agent` and set Agent tags and git repo SSH key:
 
 ```console
 helm install --name bk-agent --namespace buildkite buildkite/agent \
-  --set agent.token="$(cat buildkite.token)",agent.meta="role=production" \
+  --set agent.token="$(cat buildkite.token)",agent.tags="role=production" \
   --set privateSshKey="$(cat buildkite.key)"  \
   --set registryCreds.gcrServiceAccountKey="$(cat gcr_service_account.key | base64)"
 ```
@@ -66,7 +66,7 @@ Parameter | Description | Default
 `image.tag` | Image tag | ``
 `image.pullPolicy` | Image pull policy | `IfNotPresent`
 `agent.token` | Agent token | Must be specified
-`agent.meta` | Agent meta-data | `role=agent`
+`agent.tags` | Agent tags | `role=agent`
 `enableHostDocker` | Mount docker socket | `true`
 `securityContext` | Pod security context to set | `{}`
 `extraEnv` | Agent extra env vars | `nil`
