@@ -26,11 +26,11 @@ helm install --name bk-agent --namespace buildkite buildkite/agent \
     --set agent.token="BUILDKITE_AGENT_TOKEN"
 ```
 
-To install the chart with the release name `bk-agent` and set Agent meta-data and git repo SSH key:
+To install the chart with the release name `bk-agent` and set Agent tags and git repo SSH key:
 
 ```console
 helm install --name bk-agent --namespace buildkite buildkite/agent \
-  --set agent.token="$(cat buildkite.token)",agent.meta="role=production" \
+  --set agent.token="$(cat buildkite.token)",agent.tags="role=production" \
   --set privateSshKey="$(cat buildkite.key)"  \
   --set registryCreds.gcrServiceAccountKey="$(cat gcr_service_account.key | base64)"
 ```
@@ -66,13 +66,15 @@ Parameter | Description | Default
 `image.tag` | Image tag | ``
 `image.pullPolicy` | Image pull policy | `IfNotPresent`
 `agent.token` | Agent token | Must be specified
-`agent.meta` | Agent meta-data | `role=agent`
+`agent.tags` | Agent tags | `role=agent`
 `enableHostDocker` | Mount docker socket | `true`
 `securityContext` | Pod security context to set | `{}`
 `extraEnv` | Agent extra env vars | `nil`
 `privateSshKey` | Agent ssh key for git access | `nil`
 `registryCreds.gcrServiceAccountKey` | GCP Service account json key | `nil`
 `registryCreds.dockerConfig` | Private registry docker config.json | `nil`
+`entrypointd` | Add files to /docker-entrypoint.d/ via a ConfigMap | `{}`
+`serviceAccount.annotation` | Extra annotations for the generated ServiceAccount | `{}`
 `rbac.create` | Whether to create RBAC resources to be used by the pod | `false`
 `rbac.role.rules` | List of rules following the role specification | See [values.yaml](values.yaml)
 `volumeMounts` | Extra volumeMounts configuration | `nil`
