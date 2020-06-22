@@ -20,9 +20,13 @@ agent:
 # Enable mounting the hosts docker socket into the agent container
 enableHostDocker: true
 
-# Enable security context configuration
+# Enable security context configuration for the container
 securityContext: {}
   # privileged: true
+
+# Enable security context configuration for the pod
+podSecurityContext: {}
+  # fsGroup: 1000
 
 # Extra env vars to be passed
 # If you do want to pass extra env vars to the agent, uncomment the following
