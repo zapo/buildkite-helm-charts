@@ -3,7 +3,28 @@ entries:
   agent:
   - apiVersion: v1
     appVersion: 3.17.0
-    created: "2020-06-22T08:19:19.7063613Z"
+    created: "2020-06-26T08:19:35.8704828Z"
+    description: Buildkite Agent Chart
+    digest: 184bddea7686c8b78228c7dea458a40501c05db268d285ce7184de031d88f78e
+    home: https://buildkite.com
+    icon: https://buildkite.com/_next/static/assets/assets/images/brand-assets/buildkite-logo-portrait-on-light-61fc0230.png
+    keywords:
+    - kubernetes deployment
+    - helm release
+    - continuous deployment
+    - continuous integration
+    maintainers:
+    - email: rmocius@gmail.com
+      name: rimusz
+    name: agent
+    sources:
+    - https://github.com/buildkite/agent
+    urls:
+    - https://buildkite.github.io/charts/agent-0.3.18.tgz
+    version: 0.3.18
+  - apiVersion: v1
+    appVersion: 3.17.0
+    created: "2020-06-26T08:19:35.8643049Z"
     description: Buildkite Agent Chart
     digest: 9b31d625e51f79a37e3ff182918ea4322239b0ef70326e695456ce6ed0c4592a
     home: https://buildkite.com
@@ -24,7 +45,7 @@ entries:
     version: 0.3.17
   - apiVersion: v1
     appVersion: 3.17.0
-    created: "2020-06-22T08:19:19.7005891Z"
+    created: "2020-06-26T08:19:35.8570187Z"
     description: Buildkite Agent Chart
     digest: bcc746490d80c03f66d6e7726afd9c5dd90ce021314041e17aea918af3168ee9
     home: https://buildkite.com
@@ -45,7 +66,7 @@ entries:
     version: 0.3.16
   - apiVersion: v1
     appVersion: 3.17.0
-    created: "2020-06-22T08:19:19.6934467Z"
+    created: "2020-06-26T08:19:35.8495021Z"
     description: Buildkite Agent Chart
     digest: 0f531ca935c5e4fee2adeb7392d55351839654662d19374569b9a7ff248ad9dd
     home: https://buildkite.com
@@ -66,7 +87,7 @@ entries:
     version: 0.3.14
   - apiVersion: v1
     appVersion: 3.17.0
-    created: "2020-06-22T08:19:19.6877437Z"
+    created: "2020-06-26T08:19:35.8418718Z"
     description: Buildkite Agent Chart
     digest: 0a3c3431023946d9d6897e4eed6c3fa5d74f97a7df6eaa03dff8f31ff1b0676a
     home: https://buildkite.com
@@ -87,7 +108,7 @@ entries:
     version: 0.3.13
   - apiVersion: v1
     appVersion: 3.17.0
-    created: "2020-06-22T08:19:19.6831916Z"
+    created: "2020-06-26T08:19:35.8351986Z"
     description: Buildkite Agent Chart
     digest: c73cce6835ade3c2566b2b0f4fd2ce08d00807072a8372e82f3ed16b5a93a1aa
     home: https://buildkite.com
@@ -108,7 +129,7 @@ entries:
     version: 0.3.12
   - apiVersion: v1
     appVersion: 3.17.0
-    created: "2020-06-22T08:19:19.6788357Z"
+    created: "2020-06-26T08:19:35.8291276Z"
     description: Buildkite Agent Chart
     digest: 946108f788cc314c7cf982c16cf90d765b13d2ec85ddc969689b7d245e6b2ffd
     home: https://buildkite.com
@@ -129,7 +150,7 @@ entries:
     version: 0.3.11
   - apiVersion: v1
     appVersion: 3.12.0
-    created: "2020-06-22T08:19:19.6747837Z"
+    created: "2020-06-26T08:19:35.8217926Z"
     description: Buildkite Agent Chart
     digest: fc5115e5488ed9d3274985eee0a94207cb7ede82ab3f4c6185fe682dbf9e94ab
     home: https://buildkite.com
@@ -150,7 +171,7 @@ entries:
     version: 0.3.10
   - apiVersion: v1
     appVersion: 3.12.0
-    created: "2020-06-22T08:19:19.7507377Z"
+    created: "2020-06-26T08:19:35.9308514Z"
     description: Buildkite Agent Chart
     digest: 677aac108d86600f4d813e37afbab4e0457332aca81366aded8efe074726457e
     home: https://buildkite.com
@@ -171,7 +192,7 @@ entries:
     version: 0.3.9
   - apiVersion: v1
     appVersion: 3.12.0
-    created: "2020-06-22T08:19:19.7459547Z"
+    created: "2020-06-26T08:19:35.9228368Z"
     description: Buildkite Agent Chart
     digest: ac837f6ffb56c47a7c8d7cf660211538982bf15b25b1987bab84edf457d886c2
     home: https://buildkite.com
@@ -192,7 +213,7 @@ entries:
     version: 0.3.8
   - apiVersion: v1
     appVersion: 3.12.0
-    created: "2020-06-22T08:19:19.7409381Z"
+    created: "2020-06-26T08:19:35.9151844Z"
     description: Buildkite Agent Chart
     digest: 2414356a80ad0692ebeb770fb7152e35df5d69a8ffd746d5792305944fd1c137
     home: https://buildkite.com
@@ -213,7 +234,7 @@ entries:
     version: 0.3.7
   - apiVersion: v1
     appVersion: 3.5.4
-    created: "2020-06-22T08:19:19.7363486Z"
+    created: "2020-06-26T08:19:35.9085802Z"
     description: Buildkite Agent Chart
     digest: bfb9fd8678507683e7d971d0c6f5d44c29b1e3931db428e46099ab6ec49dc969
     home: https://buildkite.com
@@ -234,7 +255,7 @@ entries:
     version: 0.3.6
   - apiVersion: v1
     appVersion: 3.5.4
-    created: "2020-06-22T08:19:19.7316253Z"
+    created: "2020-06-26T08:19:35.9012106Z"
     description: Buildkite Agent Chart
     digest: 9ab53da6671f38766e2df2a906e8de12cef00a226a20a1a6047797f48744e7ed
     home: https://buildkite.com
@@ -255,7 +276,7 @@ entries:
     version: 0.3.5
   - apiVersion: v1
     appVersion: 3.5.4
-    created: "2020-06-22T08:19:19.720784Z"
+    created: "2020-06-26T08:19:35.8949951Z"
     description: Buildkite Agent Chart
     digest: 8c515ac52d0f67430e1741c1aa03fa2843fb750ac2ff69fe0e55f015eb364616
     home: https://buildkite.com
@@ -276,7 +297,7 @@ entries:
     version: 0.3.4
   - apiVersion: v1
     appVersion: 3.5.4
-    created: "2020-06-22T08:19:19.715776Z"
+    created: "2020-06-26T08:19:35.8875999Z"
     description: Buildkite Agent Chart
     digest: d079e9835b7a5d0c90b433fdfa514fd34fc501c4d23b99c65205b14f021dcc11
     home: https://buildkite.com
@@ -297,7 +318,7 @@ entries:
     version: 0.3.3
   - apiVersion: v1
     appVersion: 3.5.4
-    created: "2020-06-22T08:19:19.7109644Z"
+    created: "2020-06-26T08:19:35.8811568Z"
     description: Buildkite Agent Chart
     digest: e197ce8310b60251f12e0db492356a1bc9b0d99f25788e86b8c3984077242533
     home: https://buildkite.com
@@ -318,7 +339,7 @@ entries:
     version: 0.3.2
   - apiVersion: v1
     appVersion: 3.5.4
-    created: "2020-06-22T08:19:19.67028Z"
+    created: "2020-06-26T08:19:35.8155861Z"
     description: Buildkite Agent Chart
     digest: adc4da85c2b3f20a4757beafee16deb37d8a237009b88695b55c7b737487318a
     home: https://buildkite.com
@@ -337,4 +358,4 @@ entries:
     urls:
     - https://buildkite.github.io/charts/agent-0.3.1.tgz
     version: 0.3.1
-generated: "2020-06-22T08:19:19.6631124Z"
+generated: "2020-06-26T08:19:35.8080012Z"
