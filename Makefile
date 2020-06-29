@@ -42,6 +42,8 @@ build: dist-repo
 # Commit and push the chart index
 release:
 	cd dist-repo && \
+		git config user.name "Buildkite" && \
+                git config user.email "dev+charts-ci@buildkite.com" && \
 		git add *.tgz index.yaml && \
 		git commit --message "Update to buildkite/charts@${COMMIT}" && \
 		git push origin gh-pages
