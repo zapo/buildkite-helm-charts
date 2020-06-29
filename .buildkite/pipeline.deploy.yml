@@ -7,3 +7,5 @@ steps:
     command: "make build release"
     concurrency_group: "${BUILDKITE_PIPELINE_SLUG}/deploy"
     concurrency: 1
+    env:
+      UPSTREAM_GIT_URL: "git@github.com:buildkite/charts.git"
