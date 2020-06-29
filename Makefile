@@ -43,5 +43,5 @@ build: dist-repo
 release:
 	cd dist-repo && \
 		git add *.tgz index.yaml && \
-		git commit --message "Update to buildkite/charts@${COMMIT}" && \
+		git commit --message "Update to buildkite/charts@${COMMIT}" --author="Buildkite Developers <dev@buildkite.com>" && \
 		git push origin gh-pages
