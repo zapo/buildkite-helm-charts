@@ -4,9 +4,6 @@ env:
 
 steps:
   - label: ":shipit:" 
-    commands: |
-      git config user.email "dev@buildkite.com"
-      git config user.name "Buildkite"
-      make build release
+    command: "make build release"
     concurrency_group: "${BUILDKITE_PIPELINE_SLUG}/deploy"
     concurrency: 1
