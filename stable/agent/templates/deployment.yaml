@@ -96,7 +96,7 @@ spec:
             {{- end }}
             {{- if .Values.dind.enabled }}
             - name: shared-volume
-              mountPath: "/var/buildkite"
+              mountPath: "/var/buildkite/shared"
             {{- end }}
             {{- if .Values.entrypointd }}
             - name: entrypointd
