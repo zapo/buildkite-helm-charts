@@ -34,14 +34,14 @@ spec:
 {{- end }}
     spec:
       serviceAccount: {{ template "fullname" . }}
+      {{- if .Values.registryCreds.dockerconfigjson }}
+      imagePullSecrets:
+      - name: {{ template "fullname" . }}-dockerconfigjson
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ default .Chart.AppVersion .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          {{- if .Values.registryCreds.dockerconfigjson }}
-          imagePullSecrets:
-          - name: {{ template "fullname" . }}-dockerconfigjson
-          {{- end }}
 {{- with .Values.securityContext }}
           securityContext:
 {{ toYaml . | indent 12 }}
