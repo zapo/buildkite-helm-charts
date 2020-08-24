@@ -45,4 +45,4 @@ Upon successful review, someone will give the PR a __LGTM__ in the review thread
 
 ## Copyright
 
-Copyright (c) 2018 Buildkite Pty Ltd. See [LICENSE](LICENSE) for details.
+Copyright (c) 2020 Buildkite Pty Ltd. See [LICENSE](LICENSE) for details.
