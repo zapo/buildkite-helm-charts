@@ -115,6 +115,10 @@ spec:
             mountPath: "/var/lib/docker"
           - name: shared-volume
             mountPath: "/var/buildkite"
+          {{- if .Values.registryCreds.gcrServiceAccountKey }}
+          - name: service-key
+            mountPath: /etc/service_key
+          {{- end }}
 {{- end }}
 {{- if .Values.podContainers }}{{ toYaml .Values.podContainers | nindent 8 }}{{- end }}
 {{- with .Values.podSecurityContext }}
